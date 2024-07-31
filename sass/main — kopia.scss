@@ -1,0 +1,312 @@
+@use './colors' as *;
+@use './components' as *;
+@use './mixin' as *;
+@use './hamburger' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.6rem;
+	color: black;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+// NAV
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 80px;
+	background-color: #fff;
+	z-index: 9999;
+
+	&__items {
+		position: relative;
+		display: flex;
+		height: 100%;
+		align-items: center;
+
+		.hamburger {
+			position: absolute;
+			right: 0;
+			padding: 1em;
+			z-index: 500;
+
+			&-inner,
+			&-inner::before,
+			&-inner::after {
+				background-color: black;
+				z-index: 500;
+			}
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		left: 0;
+		padding: 1em;
+	}
+
+	&__mobile {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-color: white;
+		transform: translateX(-102%);
+		transition: transform 0.3s;
+		z-index: 10;
+
+		&--active {
+			transform: translateX(0);
+		}
+	}
+
+	&__desktop {
+		display: none;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__links {
+		font-weight: 600;
+		margin: 0.5em;
+		padding: 0.5em;
+		text-decoration: none;
+		color: black;
+
+		img {
+			height: 40px;
+		}
+	}
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 55vh;
+	margin-top: 80px;
+	overflow: hidden;
+
+	&__boxes {
+		position: relative;
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+		padding-top: 1em;
+	}
+
+	&__box {
+		&-img {
+			display: flex;
+			height: 100%;
+			width: 50%;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+		&-content {
+			width: 55%;
+			position: relative;
+			.heading {
+				font-size: 6rem;
+			}
+
+			.circle-item {
+				position: absolute;
+				left: -0.7%;
+				top: 0;
+				width: 100px;
+				height: 100px;
+				background: rgb(255, 210, 0);
+				background: linear-gradient(90deg, rgba(255, 210, 0, 1) 0%, rgba(240, 169, 43, 1) 100%);
+				border-radius: 50%;
+				z-index: -1;
+			}
+
+			.text {
+				margin-top: 2.6em;
+				font-size: 2.5rem;
+
+				span {
+					font-weight: bold;
+					font-size: 3rem;
+				}
+			}
+
+			.text2 {
+				margin-top: 3em;
+				font-size: 2.2rem;
+				font-style: italic;
+			}
+
+			.header-btn {
+				display: flex;
+				margin-top: 2em;
+				padding: 0.5em 0.5em;
+				justify-content: space-around;
+				align-items: center;
+				display: flex;
+				width: 250px;
+				height: 50px;
+				border-radius: 30px;
+				background: rgb(255, 210, 0);
+				background: linear-gradient(90deg, rgba(255, 210, 0, 1) 0%, rgba(240, 169, 43, 1) 100%);
+
+				img {
+					border-radius: 50%;
+					background-color: white;
+				}
+
+				p {
+					font-size: 2.7rem;
+					text-transform: uppercase;
+					font-weight: bold;
+				}
+			}
+
+			.info {
+				margin-top: 4em;
+			}
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: url('/img/info-bg.jpg');
+		height: 100%;
+		width: 100%;
+		background-size: cover;
+		background-position: center;
+		opacity: 0.1;
+		z-index: -10;
+	}
+}
+
+.reservation {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 0.8em;
+	color: white;
+	background-color: black;
+	border-radius: 30px;
+
+	&__heading {
+		color: rgb(255, 210, 0);
+		font-size: 3rem;
+		// text-transform: uppercase;
+	}
+
+	&__form {
+		position: relative;
+		width: 100%;
+
+		&-box {
+			position: relative;
+			display: grid;
+			grid-template-columns: repeat(9, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			gap: 1em;
+			margin: 1em;
+
+			&--count {
+				@include entryBox;
+				grid-column: 1/2;
+				grid-row: 1/2;
+
+				.reservation__form-label {
+					left: 14px;
+				}
+			}
+			&--start-adress {
+				@include entryBox;
+				grid-column: 2/6;
+				grid-row: 1/2;
+			}
+			&--end-adress {
+				@include entryBox;
+				grid-column: 6/10;
+				grid-row: 1/2;
+			}
+		}
+
+		&-input {
+			@include reservationForm;
+		}
+		&-label {
+			@include reservationLabel;
+		}
+	}
+	&__selection {
+		display: flex;
+		justify-content: center;
+		margin-top: 0.5em;
+
+		&-text {
+			margin: 0 0.7em;
+		}
+
+		input {
+			margin: 0 0.7em;
+		}
+	}
+	&__btn {
+		display: flex;
+		margin: 1em;
+		padding: 0.5em 0.5em;
+		justify-content: space-around;
+		align-items: center;
+		display: flex;
+		width: 250px;
+		height: 50px;
+		border-radius: 30px;
+		background: rgb(255, 210, 0);
+		background: linear-gradient(90deg, rgba(255, 210, 0, 1) 0%, rgba(240, 169, 43, 1) 100%);
+
+		img {
+			border-radius: 50%;
+			background-color: white;
+		}
+
+		p {
+			font-size: 2.7rem;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+	}
+}

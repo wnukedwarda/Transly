@@ -1,0 +1,55 @@
+@use './colors' as *;
+
+.black-block {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -35%) rotate(45deg);
+	height: 100px;
+	width: 100px;
+	background-color: rgb(9, 9, 9);
+	border-radius: 30px;
+	z-index: -1;
+}
+
+.circle-item {
+	position: absolute;
+	left: 0%;
+	top: 0;
+	width: 45px;
+	height: 45px;
+	background: rgb(255, 210, 0);
+	background: linear-gradient(90deg, rgba(255, 210, 0, 1) 0%, rgba(240, 169, 43, 1) 100%);
+	border-radius: 50%;
+	z-index: -1;
+}
+
+.quote-item {
+	position: absolute;
+	top: -50px;
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 10rem;
+	background: linear-gradient(90deg, rgba(255, 210, 0, 0.75) 0%, rgba(240, 169, 43, 1) 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transform: rotate(180deg);
+	z-index: -1;
+}
+
+.title {
+	position: relative;
+	font-size: 2rem;
+}
+
+
+
+// position: absolute;
+// left: -0.7%;
+// top: 0;
+// width: 90px;
+// height: 90px;
+// background: rgb(255, 210, 0);
+// background: linear-gradient(90deg, rgba(255, 210, 0, 1) 0%, rgba(240, 169, 43, 1) 100%);
+// border-radius: 50%;
+// z-index: -1;

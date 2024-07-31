@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transly Bus - Busy za granice!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/18529ec79e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+
+<body>
+    <nav class="nav">
+        <div class="nav__items">
+            <div class="nav__logo">
+                <img height="40" src="./img/logo-small.png" alt="Logo Firmy">
+            </div>
+            <button class="hamburger hamburger--spin" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+            <div class="nav__mobile">
+                <a class="nav__links" href="#">Wyjazdy</a>
+                <a class="nav__links" href="#">Powroty</a>
+                <a class="nav__links" href="#">Paczki</a>
+                <a class="nav__links" href="#">O Nas</a>
+                <a class="nav__links" href="#">Cennik</a>
+                <a class="nav__links" href="#">Rezerwacja</a>
+                <a class="nav__links" href="#">Kontakt</a>
+            </div>
+            <div class="nav__desktop">
+                <a class="nav__links" href="#">Wyjazdy</a>
+                <a class="nav__links" href="#">Powroty</a>
+                <a class="nav__links" href="#">Paczki</a>
+                <a class="nav__links" href="#">O Nas</a>
+                <a class="nav__links" href="#">Cennik</a>
+                <a class="nav__links" href="#">Rezerwacja</a>
+                <a class="nav__links" href="#">Kontakt</a>
+                <a class="nav__links" href="#"><img src="./img/icon/facebook.svg" alt=""></a>
+                <a class="nav__links" href="#"><img src="./img/icon/insta.svg" alt=""></a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="header__bg"></div>
+        <div class="header__boxes-img">
+            <img src="./img/womam-mb.png" alt="Kobieta z Walizka, ciesząca się z wyjazdu busem">
+        </div>
+        <div class="header__heading">
+            <h1>Twoje Przewozy</h1>
+            <div class="circle-item"></div>
+        </div>
+        <div class="header__boxes">
+            <div class="header__boxes-content">
+
+
+                <div class="text">
+                    <div class="text-down-bg"></div>
+                    <p>Oferujemy komforowy przewóz osób i paczek <br> <span>do Holandii, Belgi, Niemiec oraz
+                            Polski</span></p>
+                </div>
+
+                <div class="text2">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolorem, atque quos nisi
+                        corporis explicabo modi iste placeat quod, nam inventore minima neque ab, commodi quidem
+                        perferendis. Doloribus, aliquid quibusdam!</p>
+                </div>
+
+                <div class="header-btn">
+                    <img height="25" src="./img/icon/call-icon.svg" alt="">
+                    <p>Zadzwoń</p>
+                </div>
+                <p class="info">* Telefony odbieramy codziennie od 7:00 do 22:00</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="reservation wrapper">
+            <div class="reservation__box">
+                <div class="black-block"></div>
+                <h2 class="reservation__box-heading">Zarezerwuj przejazd:</h2>
+
+                <form class="reservation__box-form">
+                    <div class="reservation__box-form-container">
+
+
+                        <label for="name" class="reservation__box-form-label">Data przejazdu:</label>
+                        <input type="text" class="reservation__box-form-input" id="name">
+
+
+
+                        <label for="name" class="reservation__box-form-label">Adres początkowy:</label>
+                        <input type="text" class="reservation__box-form-input" id="email">
+
+
+
+                        <label for="name" class="reservation__box-form-label">Adres docelowy:</label>
+                        <input type="text" class="reservation__box-form-input" id="email">
+
+
+                    </div>
+                </form>
+
+                <div class="reservation__selection">
+                    <h4 class="reservation__selection-heading">Wybierz rodzaj przejazdu: </h4>
+                    <div class="reservation__selection-option">
+
+                        <div class="reservation__selection-option--person">
+                            <input type="radio" id="person" name="passage" value="osoba" checked />
+                            <label for="huey">przejazd osobowy</label>
+                        </div>
+                        <div class="reservation__selection-option--package">
+                            <input type="radio" id="package" name="passage" value="paczka" />
+                            <label for="dewey">przejazd paczki</label>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="reservation__btn">
+                    <img height="35" src="./img/icon/check-ok.svg" alt="">
+                    <p>Rezerwuj</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="info">
+            <div class="info__bg"></div>
+            <div class="wrapper">
+                <div class="info__text">
+                    <div class="info__text-heading title">
+                        <h2>Jeździmy codziennie!</h2>
+                        <div class="circle-item"></div>
+                    </div>
+
+                    <p>U Nas zamówisz przejazd każdego dnia tygodnia</p>
+
+                </div>
+                <div class="info__cards">
+                    <div class="info__card">
+                        <div class="info__card-border info__card-border--left"></div>
+                        <h3 class="info__card-title">Rezerwacja telefoniczna</h3>
+                        <p class="info__card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod esse
+                            ad
+                            deleniti quasi. Harum, voluptas modi ex nulla id error?</p>
+                    </div>
+
+                    <div class="info__card">
+                        <div class="info__card-border info__card-border--right"></div>
+                        <h3 class="info__card-title">WhatsApp</h3>
+                        <p class="info__card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod esse
+                            ad
+                            deleniti quasi. Harum, voluptas modi ex nulla id error?</p>
+                    </div>
+
+                </div>
+                <p class="info__working-hours">* Telefony odbieramy codziennie od 7:00 do 22:00</p>
+            </div>
+
+        </section>
+        <section class="vans">
+            <!-- <div class="vans__bg"></div> -->
+            <img src="./img/bus.gif" alt="">
+            <div class="vans__heading title">
+                <h2>Nasze Busy</h2>
+                <div class="circle-item"></div>
+            </div>
+            <div class="vans__content wrapper">
+                <div class="vans__content-text1">
+                    <p>Nasza flota to kilkadziesiąt
+                        nowoczesnych busów marki
+                        <strong>Mercedes Sprinter</strong>
+                    </p>
+                    <div class="quote-item"><i class="fa-solid fa-quote-left"></i></div>
+                </div>
+                <div class="vans__content-text2">
+                    <p>dzięki czemu <strong>Transly</strong> oferuje przewóz osób i paczek na najwyższym poziomie.
+                    </p>
+                    <div class="quote-item"><i class="fa-solid fa-quote-left"></i></div>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,410 @@
+.black-block {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -35%) rotate(45deg);
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #000;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+.hamburger--spin .hamburger-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin .hamburger-inner::before {
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+
+.hamburger--spin .hamburger-inner::after {
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.is-active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+
+.hamburger--spin.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  color: black;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  z-index: 9999;
+}
+.nav__items {
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.nav__items .hamburger {
+  position: absolute;
+  right: 0;
+  padding: 1em;
+  z-index: 500;
+}
+.nav__items .hamburger-inner, .nav__items .hamburger-inner::before, .nav__items .hamburger-inner::after {
+  background-color: black;
+  z-index: 500;
+}
+.nav__logo {
+  position: absolute;
+  left: 0;
+  padding: 1em;
+}
+.nav__mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  transform: translateX(-102%);
+  transition: transform 0.3s;
+  z-index: 10;
+}
+.nav__mobile--active {
+  transform: translateX(0);
+}
+.nav__desktop {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.nav__links {
+  font-weight: 600;
+  margin: 0.5em;
+  padding: 0.5em;
+  text-decoration: none;
+  color: black;
+}
+.nav__links img {
+  height: 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 55vh;
+  margin-top: 80px;
+  overflow: hidden;
+}
+.header__boxes {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+.header__box-img {
+  display: flex;
+  height: 100%;
+  width: 50%;
+}
+.header__box-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header__box-content {
+  width: 55%;
+  position: relative;
+}
+.header__box-content .heading {
+  font-size: 6rem;
+}
+.header__box-content .circle-item {
+  position: absolute;
+  left: -0.7%;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  background: rgb(255, 210, 0);
+  background: linear-gradient(90deg, rgb(255, 210, 0) 0%, rgb(240, 169, 43) 100%);
+  border-radius: 50%;
+  z-index: -1;
+}
+.header__box-content .text {
+  margin-top: 2.6em;
+  font-size: 2.5rem;
+}
+.header__box-content .text span {
+  font-weight: bold;
+  font-size: 3rem;
+}
+.header__box-content .text2 {
+  margin-top: 3em;
+  font-size: 2.2rem;
+  font-style: italic;
+}
+.header__box-content .header-btn {
+  display: flex;
+  margin-top: 2em;
+  padding: 0.5em 0.5em;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  width: 250px;
+  height: 50px;
+  border-radius: 30px;
+  background: rgb(255, 210, 0);
+  background: linear-gradient(90deg, rgb(255, 210, 0) 0%, rgb(240, 169, 43) 100%);
+}
+.header__box-content .header-btn img {
+  border-radius: 50%;
+  background-color: white;
+}
+.header__box-content .header-btn p {
+  font-size: 2.7rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.header__box-content .info {
+  margin-top: 4em;
+}
+.header__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("/img/info-bg.jpg");
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: -10;
+}
+
+.reservation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.8em;
+  color: white;
+  background-color: black;
+  border-radius: 30px;
+}
+.reservation__heading {
+  color: rgb(255, 210, 0);
+  font-size: 3rem;
+}
+.reservation__form {
+  position: relative;
+  width: 100%;
+}
+.reservation__form-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1em;
+  margin: 1em;
+}
+.reservation__form-box--count {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.reservation__form-box--count .reservation__form-label {
+  left: 14px;
+}
+.reservation__form-box--start-adress {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  grid-column: 2/6;
+  grid-row: 1/2;
+}
+.reservation__form-box--end-adress {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  grid-column: 6/10;
+  grid-row: 1/2;
+}
+.reservation__form-input {
+  width: 100%;
+  height: 44px;
+  margin: 5px;
+  outline: none;
+  padding: 0 30px;
+  font-size: 1.4rem;
+  border-radius: 20px;
+}
+.reservation__form-label {
+  font-size: 1.4rem;
+  font-weight: 500;
+  position: absolute;
+  color: black;
+  left: 20px;
+  bottom: 25%;
+  border-radius: 30px;
+}
+.reservation__selection {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+}
+.reservation__selection-text {
+  margin: 0 0.7em;
+}
+.reservation__selection input {
+  margin: 0 0.7em;
+}
+.reservation__btn {
+  display: flex;
+  margin: 1em;
+  padding: 0.5em 0.5em;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  width: 250px;
+  height: 50px;
+  border-radius: 30px;
+  background: rgb(255, 210, 0);
+  background: linear-gradient(90deg, rgb(255, 210, 0) 0%, rgb(240, 169, 43) 100%);
+}
+.reservation__btn img {
+  border-radius: 50%;
+  background-color: white;
+}
+.reservation__btn p {
+  font-size: 2.7rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}/*# sourceMappingURL=main — kopia.css.map */
